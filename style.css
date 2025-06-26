@@ -1,0 +1,232 @@
+/* Reset + base fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Background setup */
+body {
+  background: url('eb83bfaa02c457b5a323eebbc3d0138e.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fdf6f0; /* warm beige */
+}
+
+.container {
+  min-height: 100%;
+  flex-direction: column;
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+  padding: 0 2rem; /* ADD padding so container doesn’t clip content */
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.05);
+  overflow: visible; /* Ensure internal overflow is allowed */
+}
+
+/* Centered content */
+.intro {
+  text-align: center;
+  padding: 2rem 3rem; /* ADD horizontal padding */
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  max-width: 900px;  /* EXPAND the max width */
+  width: 100%;
+}
+
+/* Headline */
+.intro h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  color: #3e2d20; /* rich brown */
+}
+
+.intro p {
+  font-size: 1.1rem;
+  margin-bottom: 2.2rem; /* space above icons */
+  color: #4e392c; /* slightly lighter */
+}
+
+/* Icon row */
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 4.5rem; /* space above icons */
+}
+
+/* Each icon container */
+.link-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 130px;
+  gap: 0.5rem;
+}
+
+/* Message styling */
+.message {
+  width: 130px;
+  max-width: 100%;
+  height: auto;
+  opacity: 0.95;
+}
+
+/* Fine-tuned alignment */
+.link-block:nth-child(1) .message {
+  margin-left: -100px; /* shift GitHub message to the left */
+}
+
+.link-block:nth-child(2) .message {
+  margin-left: 55px; /* adjust Instagram message here */
+}
+
+.link-block:nth-child(3) .message {
+  margin-left: 75px; /* shift Spotify message to the right */
+}
+
+
+/* Icon anchor styling */
+.icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  filter: invert(0%) sepia(5%) saturate(0%) brightness(95%) contrast(100%);
+  opacity: 0.85;
+  transition: all 0.3s ease;
+}
+
+/* Instagram specific size tweak */
+.instagram-icon {
+  width: 56px;
+  height: 56px;
+}
+
+/* Hover effect */
+.icon:hover img {
+  filter: invert(47%) sepia(21%) saturate(476%) hue-rotate(346deg) brightness(97%) contrast(91%);
+  transform: scale(1.1);
+  opacity: 1;
+}
+/* Container for all sub-boxes */
+.sub-container-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* Outer container for each flip card */
+.flip-card {
+  perspective: 1000px;
+  width: 70%;           /* Adjust overall box width */
+  min-width: 300px;
+  height: 150px;
+  margin-bottom: 3rem;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Inner wrapper that handles the flip */
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Flip effect */
+.flip-card.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* Shared sub-box styles (front and back) */
+.sub-box.front,
+.sub-box.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  color: #3e2d20;
+  backface-visibility: hidden;
+  display: flex;             /* Key: use flexbox */
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+  overflow: hidden;
+}
+
+/* Back face rotation */
+.sub-box.back {
+  transform: rotateY(180deg);
+}
+
+.sub-box-icon {
+  width: 100px !important;
+  height: 100px !important;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+
+/* Profile picture */
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
+.sub-box {
+  position: absolute;
+  width: 100%; /* or adjust as needed */
+  height: 100%;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #3e2d20;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  overflow: hidden;
+  text-align: left;
+}
+
+.sub-box-content {
+  display: flex;
+  align-items: center;     /* vertically center */
+  justify-content: center; /* horizontally center */
+  gap: 1rem;
+  height: 100%;
+}
+
+.sub-box-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+
+  /* Manual positioning tweaks */
+  margin-top: 30px;
+  margin-left: 10px;
+
+}
+
+
