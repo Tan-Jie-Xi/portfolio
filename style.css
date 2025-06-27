@@ -255,6 +255,10 @@ body {
     float: none;
   }
 }
+.sub-box p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
 
 
 
