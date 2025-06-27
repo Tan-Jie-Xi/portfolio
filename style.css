@@ -229,4 +229,30 @@ body {
 
 }
 
+@media (max-width: 600px) {
+  .flip-card {
+    width: 90%;
+    height: auto; /* Allow height to adjust based on content */
+  }
+
+  .sub-box.front,
+  .sub-box.back {
+    flex-direction: column; /* Stack image and text */
+    padding: 2rem 1rem;
+    text-align:  center;
+  }
+
+  .sub-box-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sub-box-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 0 1rem 0;
+    float: none;
+  }
+}
 
