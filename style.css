@@ -12,9 +12,14 @@ body, html {
 
 /* Background setup */
 body {
+  font-family: 'Caveat', cursive;
   background: url('eb83bfaa02c457b5a323eebbc3d0138e.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #fdf6f0; /* warm beige */
+}
+.site-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
 }
 
 .container {
