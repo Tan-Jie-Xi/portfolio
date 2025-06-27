@@ -13,7 +13,8 @@ body, html {
 /* Background setup */
 body {
   font-family: 'Caveat', cursive;
-  font-size: 2.0rem; /* Try values like 1.1rem, 1.2rem, 1.3rem */
+  font-size: 2.0rem !important; /* Try values like 1.1rem, 1.2rem, 1.3rem */
+  font-weight: 700;
   line-height: 1.8;
   background: url('eb83bfaa02c457b5a323eebbc3d0138e.jpg') no-repeat center center fixed;
   background-size: cover;
